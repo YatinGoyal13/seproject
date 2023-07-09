@@ -1,0 +1,318 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <title></title>
+    <meta name="description" content="Our first page">
+    <meta name="keywords" content="html tutorial template">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    
+    <title>SE PROJECT</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    
+    
+    
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+    
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    
+    
+    <link href="assets/css/style.css" rel="stylesheet">
+    <!-- CSS only -->
+    <link href="./adminhome.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<header id="header" class="bg-dark">
+    <div class="container d-flex align-items-center justify-content-between">
+
+        <h1 class="logo"><a href="index.html">STARTUP MANAGER</a></h1>
+
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto active" href="#hero">Startup Info</a></li>
+                <li><a class="nav-link scrollto" href="#about">Charts</a></li>
+               
+                
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+
+    </div>
+</header>
+
+
+   
+    <br>
+    <div class="container">
+        <h4>approval status</h4>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Approved</th>
+                            <th scope="col">Start Up Name</th>
+                            <th scope="col">Founder</th>
+                            <th scope="col">Comments</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Pitch Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in object_list %}
+                        {% if user.is_admin == false %}
+                        <tr>
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                                    <label class="custom-control-label" for="customCheck1">{{ user.verified }}</label>
+                                </div>
+                            </td>
+                            <td> {{ user.startUpName }} </td>
+                            
+                            <td> {{ user.founder }} </td>
+                            <td><textarea placeholder="commenbts"></textarea></td>
+                            <td> {{ user.email }} </td>
+                            <td> {{ user.description }} </td>
+                            <td> {{ user.pitch_link }} </td>
+                        </tr>
+                        {% endif %}
+                        {% empty %}
+                            <li>No users yet.</li>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h4>approval status</h4>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Approved</th>
+                            <th scope="col">Verified</th>
+                            <th scope="col">Start Up Name</th>
+                            <th scope="col">Founder</th>
+                            <th scope="col">Comments</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Pitch Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                                    <label class="custom-control-label" for="customCheck1">1</label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                                    <label class="custom-control-label" for="customCheck1">1</label>
+                                </div>
+                            </td>
+                            <td>Bootstrap 4 CDN and Starter Template</td>
+    
+                            <td>913</td>
+                            <td><textarea placeholder="comments"></textarea></td>
+                            <td>2.846</td>
+                            <td>2.846</td>
+                            <td>2.846</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                    <label class="custom-control-label" for="customCheck2">2</label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                                    <label class="custom-control-label" for="customCheck1">1</label>
+                                </div>
+                            </td>
+                            <td>Bootstrap Grid 4 Tutorial and Examples</td>
+                            <td>Cristina</td>
+                            <td><textarea placeholder="commenbts"></textarea></td>
+                            <td>3.417</td>
+                            <td>2.846</td>
+                            <td>2.846</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                    <label class="custom-control-label" for="customCheck3">3</label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                                    <label class="custom-control-label" for="customCheck1">1</label>
+                                </div>
+                            </td>
+                            <td>Bootstrap Flexbox Tutorial and Examples</td>
+                            <td>Cristina</td>
+                            <td><textarea placeholder="commenbts"></textarea></td>
+                            <td>1.234</td>
+                            <td>2.846</td>
+                            <td>2.846</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+   
+    <div class="container">
+        <h4>payment status</h4>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Approved</th>
+                            <th scope="col">Start Up Name</th>
+                            <th scope="col">Leader</th>
+                            <th scope="col">Comments</th>
+                            <th scope="col">Funds</th>
+                            <th scope="col">Time until payment</th>
+                            <th scope="col">cost of space accessed</th>
+                            <th scope="col">additional resources requested</th>
+                            <th scope="col">Reminder</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                                    <label class="custom-control-label" for="customCheck1">1</label>
+                                </div>
+                            </td>
+                            <td>Bootstrap 4 CDN and Starter Template</td>
+                            <td>Cristina</td>
+                            <td><textarea placeholder="commenbts"></textarea></td>
+                            <td>2.846</td>
+                            <td>2.846</td>
+                            <td>2.846</td>
+                            <td>2.846</td>
+                            <td><button type="button" class="btn btn-danger">Send Reminder</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                    <label class="custom-control-label" for="customCheck2">2</label>
+                                </div>
+                            </td>
+                            <td>Bootstrap Grid 4 Tutorial and Examples</td>
+                            <td>Cristina</td>
+                            <td><textarea placeholder="commenbts"></textarea></td>
+                            <td>3.417</td>
+                            <td>2.846</td>
+                            <td>2.846</td>
+                            <td>2.846</td>
+                            <td><button type="button" class="btn btn-danger">Send Reminder</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                    <label class="custom-control-label" for="customCheck3">3</label>
+                                </div>
+                            </td>
+                            <td>Bootstrap Flexbox Tutorial and Examples</td>
+                            <td>Cristina</td>
+                            <td><textarea placeholder="commenbts"></textarea></td>
+                            <td>1.234</td>
+                            <td>2.846</td>
+                            <td>2.846</td>
+                            <td>2.846</td>
+                            <td><button type="button" class="btn btn-danger">Send Reminder</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <h4>legend for additional resources</h4>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Code</th>
+                            <th scope="col">Resource</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                           
+                            
+                            <td>Cristina</td>
+                            
+                            <td>2.846</td>
+                        
+                           
+                        </tr>
+                        <tr>
+                        
+                        
+                            <td>Cristina</td>
+                        
+                            <td>2.846</td>
+                        
+                        
+                        </tr>
+                        <tr>
+                        
+                        
+                            <td>Cristina</td>
+                        
+                            <td>2.846</td>
+                        
+                        
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="button col-12">
+        <button type="button" class="btn btn-dark">Save Changes</button>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
